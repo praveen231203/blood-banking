@@ -144,7 +144,6 @@
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
-    }
 
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }

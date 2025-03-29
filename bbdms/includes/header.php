@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +28,7 @@
         }
 
         .navbar {
+            background-color: #d32f2f; /* Solid red background */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
         }
 
@@ -98,7 +98,7 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-expand-md" style="background: linear-gradient(to right, rgb(223, 36, 36), rgb(233, 26, 26)); padding: 10px 0;">
+<nav class="navbar fixed-top navbar-expand-md">
     <div class="container d-flex justify-content-between">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
             <img src="images/main_logo.jpg" alt="Logo" class="logo"> 

@@ -42,16 +42,30 @@ include('includes/config.php');
             margin-bottom: 20px; /* Space between sections */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             opacity: 0; /* Start hidden */
+            transform: translateY(50px); /* Start slightly below */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+        }
+
+        .visible {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
             animation: slideIn 0.5s forwards; /* Slide-in effect */
         }
 
-        /* Delay the animation for each section */
-        .features-section { animation-delay: 0.2s; }
-        .call-to-action-section { animation-delay: 0.4s; }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
         /* Color Variants for Sections */
         .portfolio-section {
-            background-color:rgb(228, 147, 147); /* White background */
+            background-color: rgb(228, 147, 147); /* White background */
         }
 
         .features-section {
@@ -111,54 +125,7 @@ include('includes/config.php');
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for cards */
-            opacity: 0; /* Start hidden */
-            animation: fadeIn 0.5s forwards; /* Fade-in effect */
         }
-
-        /* Fade-in Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Slide-in Animation */
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Pulse Animation */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Delay the animation for each card */
-        .donor-card:nth-child(1) { animation-delay: 0.1s; }
-        .donor-card:nth-child(2) { animation-delay: 0.2s; }
-        .donor-card:nth-child(3) { animation-delay: 0.3s; }
-        .donor-card:nth-child(4) { animation-delay: 0.4s; }
-        .donor-card:nth-child(5) { animation-delay: 0.5s; }
-        .donor-card:nth-child(6) { animation-delay: 0.6s; }
 
         .card-title a {
             text-decoration: none;
@@ -190,9 +157,9 @@ include('includes/config.php');
 
         /* Background Animation */
         @keyframes backgroundAnimation {
-            0% { background-color:rgb(239, 76, 61); }
-            50% { background-color:rgb(92, 45, 44); }
-            100% { background-color:rgb(232, 116, 0); }
+            0% { background-color: rgb(239, 76, 61); }
+            50% { background-color: rgb(92, 45, 44); }
+            100% { background-color: rgb(232, 116, 0); }
         }
     </style>
 </head>
@@ -249,7 +216,7 @@ include('includes/config.php');
 
         <!-- Features Section -->
         <div class="container-fluid features-section">
-            <div class="row section">
+            <div class="row section hidden">
                 <div class="col-lg-6">
                     <h2 class="text-fade-in">BLOOD GROUPS</h2>
                     <p class="text-fade-in">Blood groups of any human being will mainly fall into one of the following groups:</p>
@@ -272,7 +239,7 @@ include('includes/config.php');
 
         <!-- Call to Action Section -->
         <div class="container-fluid call-to-action-section">
-            <div class="row mb-4 section">
+            <div class="row mb-4 section hidden">
                 <div class="col-md-8">
                     <h4>Become a Lifesaver Today!</h4>
                     <p>Your blood donation can save lives. Every drop counts, and your contribution can make a significant difference in the lives of those in need. Join us in our mission to provide safe blood to patients in hospitals and clinics.</p>
@@ -294,6 +261,38 @@ include('includes/config.php');
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/tether/tether.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Function to check if an element is in the viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Function to add the visible class
+            function checkVisibility() {
+                $('.section.hidden').each(function() {
+                    if (isElementInViewport(this)) {
+                        $(this).removeClass('hidden').addClass('visible');
+                    }
+                });
+            }
+
+            // Check visibility on scroll
+            $(window).on('scroll', function() {
+                checkVisibility();
+            });
+
+            // Initial check in case elements are already in view
+            checkVisibility();
+        });
+    </script>
 
 </body>
 

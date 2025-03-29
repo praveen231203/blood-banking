@@ -105,6 +105,7 @@
         .social-media a img {
             width: 50px; /* Set width for images */
             height: 50px; /* Set height for images */
+            border-radius: 50%; /* Make images round */
             transition: transform 0.3s ease-in-out;
         }
 
@@ -167,17 +168,18 @@
             }
 
             .social-media a img {
-                width: 20px; /* Further adjust size for small screens */
-                height: 20px;
+                width: 30px; /* Further adjust size for small screens */
+                height: 30px;
             }
 
             .app-buttons a img {
                 width: 90px; /* Further adjust size for small screens */
             }
         }
+        
         p {
-    color: #FFFFFF; /* Set paragraph text color to white */
-}
+            color: #FFFFFF; /* Set paragraph text color to white */
+        }
     </style>
 </head>
 <body>
