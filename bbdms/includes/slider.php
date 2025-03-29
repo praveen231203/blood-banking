@@ -124,90 +124,114 @@
             height: 14px;
         }
 
+        .carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Adjust width as needed */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent; /* No background color */
+    color: #ff4d4d; /* Icon color */
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    color: #cc0000; /* Darker color on hover */
+}
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
+    }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .carousel-caption {
-                width: 90%;
-            }
-            .carousel-caption h5 {
-                font-size: 2rem;
-            }
-            .carousel-caption p {
-                font-size: 1.2rem;
-            }
-            .btn-primary {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-        }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 90%;
+    }
+    .carousel-caption h5 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
 
-        @media (max-width: 576px) {
-            .carousel-caption h5 {
-                font-size: 1.8rem;
-            }
-            .carousel-caption p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+</style>
 </head>
 <body>
 
 <!-- Carousel Section -->
 <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/banner1.jpg" alt="Donate Blood">
-                <div class="carousel-caption">
-                    <h5>Be a Hero, Save a Life!</h5>
-                    <p>Your blood donation can make a huge impact on someone's life.</p>
-                    <a href="become-donar.php" class="btn btn-primary">Become a Donor</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/cr001.webp" alt="Learn More">
-                <div class="carousel-caption">
-                    <h5>Join Our Mission</h5>
-                    <p>We are committed to saving lives. Learn more about us!</p>
-                    <a href="page.php?type=aboutus" class="btn btn-primary">About Us</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/cr02.webp" alt="Why Donate?">
-                <div class="carousel-caption">
-                    <h5>Every Drop Counts</h5>
-                    <p>Donating blood is a simple act that can save multiple lives.</p>
-                    <a href="page.php?type=donor" class="btn btn-primary">Why Donate?</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/cr03.webp" alt="Contact Us">
-                <div class="carousel-caption">
-                    <h5>Have Questions?</h5>
-                    <p>We are here to help. Contact us for more information.</p>
-                    <a href="contact.php" class="btn btn-primary">Contact Us</a>
-                </div>
-            </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+<ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+</ol>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="images/banner1.jpg" alt="Donate Blood">
+        <div class="carousel-caption">
+            <h5>Be a Hero, Save a Life!</h5>
+            <p>Your blood donation can make a huge impact on someone's life.</p>
+            <a href="become-donar.php" class="btn btn-primary">Become a Donor</a>
         </div>
     </div>
+    <div class="carousel-item">
+        <img src="images/cr001.webp" alt="Learn More">
+        <div class="carousel-caption">
+            <h5>Join Our Mission</h5>
+            <p>We are committed to saving lives. Learn more about us!</p>
+            <a href="page.php?type=aboutus" class="btn btn-primary">About Us</a>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="images/cr02.webp" alt="Why Donate?">
+        <div class="carousel-caption">
+            <h5>Every Drop Counts</h5>
+            <p>Donating blood is a simple act that can save multiple lives.</p>
+            <a href="page.php?type=donor" class="btn btn-primary">Why Donate?</a>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="images/cr03.webp" alt="Contact Us">
+        <div class="carousel-caption">
+            <h5>Have Questions?</h5>
+            <p>We are here to help. Contact us for more information.</p>
+            <a href="contact.php" class="btn btn-primary">Contact Us</a>
+        </div>
+    </div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+</div>
 </section>
 
 <!-- Bootstrap JS and dependencies -->
