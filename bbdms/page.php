@@ -174,7 +174,7 @@ include('includes/config.php');
     <div class="container-fluid cta-section">
         <h2>Become a Lifesaver Today!</h2>
         <p>Your blood donation can save lives. Join us in our mission to provide safe blood to those in need.</p>
-        <a href="donate.php" class="btn btn-lg">Donate Now</a>
+        <a href="become-donar.php" class="btn btn-lg">Become donor</a>
     </div>
 
     <!-- Back to Top Button -->
